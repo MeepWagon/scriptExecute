@@ -7,8 +7,8 @@ local Body = require(script.Body)
 local toggle = false
 
 local States = {
-    ["true"] = UDim2.new(0.027, 0,0.568, 0),
-    ["false"] = UDim2.new(0.027, 0,0.901, 0)
+    ["true"] = UDim2.new(0.027, 0,0.68, 0),
+    ["false"] = UDim2.new(0.027, 0,0.88, 0)
 }
 
 local function button(props, hooks)
