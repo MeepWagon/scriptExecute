@@ -7,11 +7,12 @@ local plr = game.Players.LocalPlayer
 local Roact = require(repStor.Packages.roact)
 local RoactUI = require(script.RoactUI)
 
-Roact.mount(RoactUI, Players.LocalPlayer.PlayerGui, "RoactUI")
-
-workspace.Map["Piano Bundle"]:WaitForChild("PianoGui").Parent = plr.PlayerGui
-
 local textBox = plr.PlayerGui:WaitForChild("RoactUI"):WaitForChild("Frame"):WaitForChild("TextBox")
+
+plr.CharacterAdded:Connect(function()
+    Roact.mount(RoactUI, Players.LocalPlayer.PlayerGui, "RoactUI")
+    workspace.Map["Piano Bundle"]:WaitForChild("PianoGui").Parent = plr.PlayerGui
+end)
 
 textBox.FocusLost:Connect(function(bool)
 	if bool then
