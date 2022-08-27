@@ -5,7 +5,27 @@ registry = "test"
 [[package]]
 name = "angelus/scriptexecute"
 version = "0.1.0"
-dependencies = [["roact", "roblox/roact@1.4.4"], ["roact-rodux", "roblox/roact-rodux@0.3.0"], ["rodux", "roblox/rodux@3.0.0"]]
+dependencies = [["roact", "roblox/roact@1.4.4"], ["roact-hooks", "kampfkarren/roact-hooks@0.4.1"], ["roact-rodux", "roblox/roact-rodux@0.3.0"], ["roact-spring", "chriscerie/roact-spring@1.0.1"], ["rodux", "roblox/rodux@3.0.0"], ["spring", "brittonfischer/spring@0.1.0"]]
+
+[[package]]
+name = "brittonfischer/spring"
+version = "0.1.0"
+dependencies = []
+
+[[package]]
+name = "chriscerie/roact-spring"
+version = "1.0.1"
+dependencies = [["Hooks", "kampfkarren/roact-hooks@0.4.1"], ["Promise", "evaera/promise@4.0.0"], ["Roact", "roblox/roact@1.4.4"], ["TestEZ", "roblox/testez@0.4.1"]]
+
+[[package]]
+name = "evaera/promise"
+version = "4.0.0"
+dependencies = []
+
+[[package]]
+name = "kampfkarren/roact-hooks"
+version = "0.4.1"
+dependencies = []
 
 [[package]]
 name = "roblox/roact"
@@ -20,4 +40,9 @@ dependencies = [["Roact", "roblox/roact@1.4.4"], ["Rodux", "roblox/rodux@3.0.0"]
 [[package]]
 name = "roblox/rodux"
 version = "3.0.0"
+dependencies = []
+
+[[package]]
+name = "roblox/testez"
+version = "0.4.1"
 dependencies = []

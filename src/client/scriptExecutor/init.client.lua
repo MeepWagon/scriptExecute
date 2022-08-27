@@ -1,18 +1,24 @@
-for _, i in pairs(workspace:GetChildren()) do
-    
-end
+local Players = game:GetService("Players")
+local repStor = game:GetService("ReplicatedStorage")
 
-local part = Instance.new("Part", workspace)
-part.Position = workspace["123him12"].HumanoidRootPart.Position + Vector3.new(0,15,0)
-part.Anchored = true
-part.CFrame = CFrame.new(part.Position, part.Position+Vector3.new(0,-1,0))
+local remoteEvent = game.ReplicatedStorage.Common.SendScript
+local plr = game.Players.LocalPlayer
 
-local light = Instance.new("SurfaceLight")
-light.Parent = part
-light.Brightness = 50
+local Roact = require(repStor.Packages.roact)
+local RoactUI = require(script.RoactUI)
 
-game:GetService("RunService"):Connect(function()
-    light.Color = Color3.new(math.random(1,255),math.random(1,255),math.random(1,255))
+Roact.mount(RoactUI, Players.LocalPlayer.PlayerGui, "RoactUI")
+
+workspace.Map["Piano Bundle"]:WaitForChild("PianoGui").Parent = plr.PlayerGui
+
+local textBox = plr.PlayerGui:WaitForChild("RoactUI"):WaitForChild("Frame"):WaitForChild("TextBox")
+
+textBox.FocusLost:Connect(function(bool)
+	if bool then
+		remoteEvent:FireServer(textBox.Text, plr)
+		textBox.Text = "Sent"
+		task.wait(1.5)
+		textBox.Text = "Paste script here!"
+		textBox:ReleaseFocus()
+	end
 end)
-
-workspace.Baseplate.Size = Vector3.new(300,0,300)

@@ -13,6 +13,9 @@
     },
 
     "ServerScriptService": {
+      "$properties": {
+        "LoadStringEnabled": true
+      },
       "Server": {
         "$path": "src/server"
       }
@@ -30,7 +33,10 @@
       "$properties": {
         "FilteringEnabled": true
       },
-      "$path": "src/workspace"
+      "$path": "src/workspace",
+      "Terrain": {
+        "$className": "Terrain"
+      }
     },
     "Lighting": {
       "$properties": {
