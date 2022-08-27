@@ -32,6 +32,6 @@ end
 
 return Hooks.new(roact)(Body, {
     defaultProps = {
-        Position = UDim2.new(0.027, 0,0.568, 0)
+        Position = UDim2.new(0.027, 0,0.68, 0)
     }
 })
